@@ -9,10 +9,10 @@ model = read.table(args[1], as.is=T, sep = ',', header = T)
 for (chr in 1:23) {
   data = read.table(paste0(args[2], chr), as.is = T, header=T)
   colnames(data) <- c('ids', 'totclen', 'secondmax')
-  newdata = as.data.frame(newdata)
-  m2 = model[chr,2] + model[chr,3]*newdata$totclen + model[chr,4]*newdata$secondmax + model[chr,5]*newdata$totclen*newdata$secondmax
-  newdata$status = exp(m2)/(1+exp(m2))
-  write.table(cbind(randindices$Indiv_ID, newdata$status), file = paste0(args[3],'.chr',chr,'.predictions.txt'), quote = F, col.names = F, row.names=F)
+  data = as.data.frame(data)
+  m2 = model[chr,2] + model[chr,3]*data$totclen + model[chr,4]*data$secondmax + model[chr,5]*data$totclen*data$secondmax
+  data$status = exp(m2)/(1+exp(m2))
+  write.table(cbind(data$ids, data$status), file = paste0(args[3],'.chr',chr,'.predictions.txt'), quote = F, col.names = F, row.names=F)
 }
 
 chrs = c()
