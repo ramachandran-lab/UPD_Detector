@@ -1,5 +1,5 @@
-# UPD_Detector
-# code and classifier parameters for ROH-based UPD detection
+# UPD Detector
+# This is an R program that uses a logistic regression framework to classify putative cases of uniparental disomy based on runs of homozygosity (ROH). 
 
 Contact: priyanka_nakka@brown.edu
 
