@@ -18,9 +18,9 @@ This program uses ROH-based statistics to classify putative cases of UPD using a
     
     EA_classifier_paramters.txt - model parameters for East Asian population cohorts
 
-2) Files of ROH-based metrics for each individual in your dataset, one for each chromosome (1-23). The file names should be in the format ‘prefix’ + chromosome number (ex. ./example-input.chr1).  The first column should contain individual ids for every individual in your dataset followed by two columns of ROH-based metrics.  The two metrics that we trained the classifier on are total Class C ROH length for the given chromosome in base pairs (second column) and the ratio of the total class C ROH length for the chromosome with the second largest total class C ROH length to the maximum ROH length over the all the chromosomes (third column).  An example file is shown below.
+2) Files of tab-delimited ROH-based metrics for each individual in your dataset, one for each chromosome (1-23). The file names should be in the format ‘prefix’ + chromosome number (ex. ./example-input.chr1).  The first column should contain individual ids for every individual in your dataset followed by two columns of ROH-based metrics.  The two metrics that we trained the classifier on are total Class C ROH length for the given chromosome in base pairs (second column) and the ratio of the total class C ROH length for the chromosome with the second largest total class C ROH length to the maximum ROH length over the all the chromosomes (third column).  An example file is shown below.
 ```
-    ids	totclen		secondmax
+    ids	    totclen		secondmax
 
     IND1	236000000	0.05
 
