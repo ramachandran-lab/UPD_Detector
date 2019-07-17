@@ -39,12 +39,15 @@ for (i in 1:23) {
 toremove = out[1,which(duplicated(out[1,])==T)]
 newout = out[,which(!(out[1,] %in% toremove))]
 newout = newout[,which(newout[3,]>=0.9)]
-test = barplot(table(newout[2,]))
+#test = barplot(table(newout[2,]))
+
+## make chromosome distribution of putative UPD counts
 setzero = setdiff(1:23, unique(newout[2,]))
 dummy = rep(0, length(setzero))
 names(dummy)<-setzero
 counts= c(table(newout[2,]), dummy)
 counts = counts[order(as.numeric(names(counts)))]
+barplot(counts)
 
 ## write out putative UPD ids and chromosomes
 write.table(t(newout[1:2,]), file = args[4], quote = F, col.names = F, row.names = F)
