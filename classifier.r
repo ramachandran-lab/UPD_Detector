@@ -7,7 +7,7 @@ model = read.table(args[1], as.is=T, sep = ',', header = T)
 #model = read.table("./NE_classifier_parameters.txt", as.is=T, sep = ',', header = T)
 
 for (chr in 1:23) {
-  data = read.table(paste0(args[2], chr), as.is = T, header=T)
+  data = read.table(paste0(args[2], chr), as.is = T, header=T, sep = '\t')
   colnames(data) <- c('ids', 'totclen', 'secondmax')
   data = as.data.frame(data)
   m2 = model[chr,2] + model[chr,3]*data$totclen + model[chr,4]*data$secondmax + model[chr,5]*data$totclen*data$secondmax
