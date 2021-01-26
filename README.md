@@ -1,4 +1,4 @@
-# UPD Detector
+# UPDetector
 # Code and input parameters to classify putative cases of uniparental disomy (UPD) based on runs of homozygosity (ROH) 
 
 Contact: priyanka_nakka@brown.edu
